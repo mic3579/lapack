@@ -32,14 +32,17 @@ jobs:
       
       - name: pre-build
         run: |
-          pwd
           mkdir build
           cd build
           cmake ..
-          pwd
-          ls -l
+      
+      - name: build
+        run: |
+          cd build
+          make -j
           
       - name: Coderrect Scan
         uses: coderrect-inc/coderrect-github-action@v0.5
         with:
+          buildPath: "build"
           buildCommand: "make -j"
