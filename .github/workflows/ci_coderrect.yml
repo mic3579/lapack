@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI_with_entrypoint
 
 # Controls when the action will run. 
 on:
@@ -37,7 +37,7 @@ jobs:
           cmake ..
           
       - name: Coderrect Scan
-        uses: coderrect-inc/coderrect-github-action@v0.5
+        uses: coderrect-inc/coderrect-github-action@v0.6
         with:
           buildPath: "build"
           buildCommand: "make -j"
